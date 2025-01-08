@@ -7,11 +7,16 @@ This project aims to develop machine learning models to understand glacier evolu
 Data Sources:
 
 a. Glacier data: “Glacier Covered Area for the State of Alaska, 1985-2020” (Dataset ID: G10040) created by the National Snow and Ice Data Center (NSIDC) (https://nsidc.org/data/g10040/versions/1). Registration on the Earthdata Login portal is required for data access.
+
+
 b. Weather data: Alaska climate research center (ACRC) of the Alaska State Climate Center at the University of Alaska Fairbanks website (https://akclimate.org/data/)
 
 Code Execution:
 
-I. Data exploration and pre-preprocessing: a. Dataset Preparation:
+I. Data exploration and pre-preprocessing: 
+
+
+a. Dataset Preparation:
 
 Glacier data: Import the glacier area CSV file into PostgreSQL using pgAdmin. 
 
@@ -72,8 +77,13 @@ Weather data:
 7.	Save the results in a dataframe named SMLprep with the following columns: Id', 'Name', 'Lat',' Lon',' Area (mi^2)_1986', 'Area (mi^2)_2020', 'Area Shrinkage (mi^2)', 'Shrinkage', 'Height (ft)', 'Length (ft)'.
 8.	Compute the total shrinkage and the percentage of glaciers that shrunk between 1986 and 2020.
 9.	Export the SMPprep dataframe to a CSV file named ‘SMLprep.csv’ in the “Data” folder.
+
+    
 II. Machine Learning Models
+
+
 a. Building the Unsupervised Learning Model
+
 1.	Read the ‘UMLprep.csv’ file into a pandas dataframe named raw_df.
 2.	Create a list of potential k values from 1 to 11.
 3.	Create an empty list to store the inertia values.
@@ -105,24 +115,24 @@ c. Building the Second Supervised Learning Model
 7.	Display the first three rows of the scaled data.
 8.	Compute inertia for all k values for use in elbow graphing.
 9.	Plot the elbow curve.
-10.	Define the model with the lower value of k clusters.
-11.	Use a random_state of 1 to generate the model.
-12.	 Fit the model. 
-13.	Make predictions.
-14.	Create a copy of the DataFrame and name it as predictions_df.
-15.	Add a class column with the labels to the predictions_df DataFrame.
-16.	 Plot the clusters - Area Loss & Temperature, Area Loss & Precipitation, Area Loss & Snow.
-17.	Create dataframe that compares weather data and area.
-18.	Compute inertia for all k values for use in elbow graphing.
-19.	Plot the elbow curve.
-20.	Define the model with the lower value of k clusters.
-21.	Use a random_state of 1 to generate the model
-22.	 Fit the model. 
-23.	Make predictions.
-24.	Create a copy of the DataFrame and name it as predictions_df.
-25.	Add a class column with the labels to the predictions_df DataFrame.
-26.	 Plot the clusters - Area Loss & Temperature, Area Loss & Precipitation, Area Loss & Snow, Area Loss & Initial Area. 
-27.	Plot the clusters for Area Loss vs. Initial Area plot with the initial dataframe that has length and height to compare the plots.\
+10. Define the model with the lower value of k clusters.
+11. Use a random_state of 1 to generate the model.
+12. Fit the model.
+13. Make predictions.
+14. Create a copy of the DataFrame and name it as predictions_df.
+15. Add a class column with the labels to the predictions_df DataFrame.
+16. Plot the clusters - Area Loss & Temperature, Area Loss & Precipitation, Area Loss & Snow.
+17. Create dataframe that compares weather data and area.
+18. Compute inertia for all k values for use in elbow graphing.
+19. Plot the elbow curve.
+20. Define the model with the lower value of k clusters.
+21. Use a random_state of 1 to generate the model
+22. Fit the model.
+23. Make predictions.
+24. Create a copy of the DataFrame and name it as predictions_df.
+25. Add a class column with the labels to the predictions_df DataFrame.
+26. Plot the clusters - Area Loss & Temperature, Area Loss & Precipitation, Area Loss & Snow, Area Loss & Initial Area.
+27. Plot the clusters for Area Loss vs. Initial Area plot with the initial dataframe that has length and height to compare the plots.\
     
 III. Geospatial Data Analysis and Visualization 
 
